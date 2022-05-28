@@ -40,6 +40,29 @@ export function getAllPostParams() {
     });
 }
 
-export function getPostData() {
-    return("Some title.");
+export function getPostData(_id) {
+    
+    // Just linear search for now due to no API integration yet
+
+    const posts = getPostsJson();
+
+    // so bad .. 
+    for(let i = 0; i < posts.length; i++)
+    {
+        const postObj = posts[i];
+        if(postObj.id == _id) {
+            return {
+                id: postObj.id,
+                title: postObj.title,
+                author: postObj.author,
+                content: postObj.content,
+            }
+        }
+    }
+    return {
+        id: -1,
+        title: "Post not found",
+        author: "",
+        content: ""
+    };
 }

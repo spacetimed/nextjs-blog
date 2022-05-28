@@ -1,6 +1,6 @@
 import { getAllPostParams, getPostData } from "../../utils/fetchPosts";
 import Layout from "../../components/layout";
-import Navigation from "../../components/navigation";
+import styles from '../../styles/viewpost.module.css';
 
 export async function getStaticPaths() {
     const paths = getAllPostParams();
@@ -12,17 +12,22 @@ export async function getStaticPaths() {
 
 export async function getStaticProps( {params} ) {
     const postId = params.id;
+    const postObj = getPostData(postId);
     return {
         props: {
-            postId,
+            postObj,
         },
     };
 }
 
-export default function Post( {postId} ) {
+export default function Post( {postObj} ) {
     return(
         <Layout>
-        <div>Post id: {postId}</div>
+            <div className={styles.post}>
+                <h1 className={styles.title}>{postObj.title}</h1>
+                <h3 className={styles.author}>by <u>{postObj.author}</u></h3>
+                <p>{postObj.content}</p>
+            </div>
         </Layout>
     );
 }

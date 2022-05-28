@@ -4,16 +4,17 @@ A simple blog system, written in React.
 
 Technologies include React, SCSS (SASS), Node, Express, NoSQL, and NextJS.
 
-## Roadmap 
+## Planned features 
 Status | Category | Function
 -------|----------|----------
 ⌛ | Backend | Port to NextJS 
-⌛ | UI | Rewrite CSS with SCSS (use REM units, SCSS) 
-⌛ | Backend | Begin Express API 
+⌛ | UI | Rewrite CSS (use REM units) 
+⌛ | Backend | Begin Express API for post CRUD 
 TBD | UI | Optimize mobile responsiveness 
 TBD | UI | Pagination
 TBD | UI | Post creation page, requires token to post
 ... | UI | View counter
+... | UI | Markdown 
 ... | UI | Sidebar
 ... | UI | Dark mode switcher
 

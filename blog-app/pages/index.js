@@ -23,7 +23,7 @@ export default function Home({ feed }) {
             <div>
                 {feed.map( ({id, title, author, content}) => (
                     <div className={styles.post}>
-                        <Link href={`/posts/${id}`}><h1 className={styles.title}>{title}</h1></Link>
+                        <Link href={`/posts/${id}`}><a><h1 className={styles.title}>{title}</h1></a></Link>
                         <h3 className={styles.author}>by <u>{author}</u></h3>
                         <p>{content}</p>
                     </div>

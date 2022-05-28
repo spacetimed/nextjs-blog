@@ -1,5 +1,5 @@
 .post {
-    width:50%;
+    margin-top:1em;
     padding:2rem;
     border-bottom:1px solid var(--border);
 }
