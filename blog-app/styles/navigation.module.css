@@ -1,0 +1,18 @@
+.navContainer {
+    width:100%;
+    border-bottom:1px solid var(--border);
+}
+
+.navList {
+    list-style-type:none;
+    overflow:hidden;
+}
+
+.navList li {
+    float:left;
+    margin-right:10px;
+}
+
+.navList a {
+    color:blue;
+}
