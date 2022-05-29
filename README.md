@@ -1,51 +1,62 @@
-# Blog
+# nextjs-blog 
 
-A simple blog system, written in React. 
+A simple blog system, written in React and NextJS. 
 
-Technologies include React, SCSS (SASS), Node, Express, NoSQL, and NextJS.
+Technologies include **React, NextJS, Node, Express**.
 
-## Planned features 
-Status | Category | Function
+Created for demonstration purposes.
+
+---
+
+## Roadmap
+Status | Type | Function
 -------|----------|----------
-⌛ | Backend | Port to NextJS 
-⌛ | UI | Rewrite CSS (use REM units) 
+✅ | Backend | Rewrite with NextJS 
+✅ | UI | Rewrite CSS (use REM units, NextJS modules) 
 ⌛ | Backend | Begin Express API for post CRUD 
-TBD | UI | Optimize mobile responsiveness 
-TBD | UI | Pagination
-TBD | UI | Post creation page, requires token to post
+⌛ | Backend | Use hashtable to store/manage posts
+... | UI | Pagination
+... | UI | Optimize mobile responsiveness 
+... | UI | Post creation page, requires token to post
 ... | UI | View counter
 ... | UI | Markdown 
 ... | UI | Sidebar
 ... | UI | Dark mode switcher
 
-## Express API:
-* NoSQL
-* Handle all CRUD operations (Create, Read, Update, Delete)
-* Handle post likes/views
+---
 
-## To do
-* Read about Hooks (usehooks.com)
-* NextJS
+## NextJS
+* Uses **Static Site Generation** (SSG)
+
+### **Pages**
+* Homepage `/pages/index.js`
+    * Fetch home feed. Endpoint: `/api/feed`
+    * Pagination of JSON result
+
+* View Post `/pages/posts/[id].js`
+    * Dynamic Routing
+    * Fetch individual post data. Endpoint: `/api/post`
+
+* About `/pages/about.js` 
+    * Static page
 
 ---
 
-## NextJS:
-* Uses **Static Generation**
-### **Pages/structures:**
+## Express API
+* NoSQL
+* Handle all CRUD operations (Create, Read, Update, Delete)
+* Stateless (REST API)
+* Blog post information includes:
+    * `{id, title, author, timestamp, views, content}`
 
-* Homepage / (index.js)
-    * utils/fetchPosts.js
-        * getFrontFeed
+### Storage
+* Markdown posts are stored in `/api/storage/{post}.md` 
+* **HashTable** is stored in `/api/storage/{table}.json`
+    * Hashed by ID, because that's how they will be requested
+    * Table structure contains post information and stored file
 
-* View Post /1-title1 , /2-title2 , ...
-    * Dynamic Routing
-    * /[id]-[title]
-    * utils/fetchPosts.js
-        * getPostParams
-        * getPostData
-       
-* /about (about.js)
-    * Purely static [?]
-
-api
-* [?]
+### **Endpoints**
+Function | Method | Endpoint
+--------|--------|-----------
+Retrieve frontpage feed | `GET` | /feed `?start=` `?limit=`
+Retrieve post data | `GET` | /post `?id=`

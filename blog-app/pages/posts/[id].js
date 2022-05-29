@@ -13,6 +13,7 @@ export async function getStaticPaths() {
 export async function getStaticProps( {params} ) {
     const postId = params.id;
     const postObj = getPostData(postId);
+
     return {
         props: {
             postObj,
