@@ -1,59 +1,64 @@
-const API = 'http://127.0.0.1:3030/posts';
+const API = 'http://127.0.0.1:3030';
 
-export async function getAllPostsJson() {
-    const res = await fetch('');
+export async function getPostsJson(start, limit) {
+    const res = await fetch(`${API}/posts/${start}?limit=${limit}`);
     const data = await res.json();
     return data;
 }
 
-export async function getFrontFeed(lower, upper) {
-    let frontFeedPosts = await getAllPostsJson();
-    frontFeedPosts = frontFeedPosts.slice(0).reverse();
+export async function getPostJson(id) {
+    const res = await fetch(`${API}/post/${id}`);
+    console.log(`${API}/post/${id}`);
+    const data = await res.json();
+    return data;
+}
+
+export async function getFrontFeed(start, limit) {
+    let feed = await getPostsJson(start, limit);
+    /*
+    payload data structure:
+    {
+        'id' : id,
+        'title' : title,
+        'author' : author,
+        'timestamp' : timestamp,
+        'views' : views,
+        'content' : content
+    }
+    */
     const maxContentSize = 120;
-    return frontFeedPosts.map( ({id, title, author, content}) => {
+    return feed.map( ({id, title, author, timestamp, views, content}) => {
         return {
             id: id,
             title: title,
             author: author,
+            timestamp: timestamp,
+            views: views,
             content: content.substring(0, maxContentSize) + "...",
         }
     });
 }
 
-export function getAllPostParams() {
-    const allPosts = getPostsJson();
-    return allPosts.map(({ id, title }) => {
+export async function getAllPostParams() {
+    const MAX = 1000;
+    const posts = await getPostsJson(0, MAX);
+    return posts.map((post) => {
         return {
             params: {
-                id: id,
+                id: post.id.toString(),
             },
         };
     });
 }
 
-export function getPostData(_id) {
-    
-    // Just linear search for now due to no API integration yet
-
-    const posts = getPostsJson();
-
-    for(let i = 0; i < posts.length; i++)
-    {
-        const postObj = posts[i];
-        if(postObj.id == _id) {
-            return {
-                id: postObj.id,
-                title: postObj.title,
-                author: postObj.author,
-                content: postObj.content,
-            }
-        }
-    }
-
+export async function getPostData(id) {
+    let post = await getPostJson(id);
     return {
-        id: -1,
-        title: "Post not found",
-        author: "",
-        content: ""
-    };
+        id: post.id,
+        title: post.title,
+        author: post.author,
+        timestamp: post.timestamp,
+        views: post.views,
+        content: post.content,
+    }
 }

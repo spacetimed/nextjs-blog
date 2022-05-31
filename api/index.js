@@ -1,30 +1,33 @@
 const app = require('express')();
 const fs = require('fs');
-const { title } = require('process');
 const PORT = 3030;
+const errorRes = {'error' : 404};
 
 const getContentFromFile = async(fileName) => {
     const mdFile = fs.readFileSync(`./storage/${fileName}`);
     return mdFile.toString();
 };
 
-const formatPosts = async(postsJson) => {
-    const formatted = [];
-    postsJson.map( async({id, title, author, timestamp, views, file}) => {
+
+const format = async(postsMap) => {
+    const result = [];
+    postsMap = postsMap.slice(0).reverse();
+    postsMap.map( async({id, title, author, timestamp, views, file}) => {
         const content = await getContentFromFile(file);
         const entry = {
             'id' : id,
             'title' : title,
             'author' : author,
+            'timestamp' : timestamp,
+            'views' : views,
             'content' : content
         };
-        formatted.push(entry);
+        result.push(entry);
     });
-    return formatted;
+    return result;
 };
 
 
-// /api/posts/0?limit=10
 app.get('/posts/:start', async(req, res) => {
 
     const i = req.params.start;
@@ -32,26 +35,40 @@ app.get('/posts/:start', async(req, res) => {
 
     const table = fs.readFileSync('./storage/table.json');
     const tableMap = JSON.parse(table);
-    
+
     if(j > tableMap.length)
         j = tableMap.length;
     
-    const posts = tableMap.slice(i, j); 
+    let posts = tableMap.slice(i, j); 
+    posts = await format(posts);
 
     if(posts.length > 0)
         res.status(200).send(posts);
     else
-        res.status(200).send({'error' : 400})
+        res.status(200).send(errorRes);
 });
 
-app.get('/post/:postId', (req, res) => {
+
+app.get('/post/:postId', async(req, res) => {
     const table = fs.readFileSync('./storage/table.json');
     const posts = JSON.parse(table); 
-    if(posts.length >= req.params.postId)
-        res.status(200).send(posts[req.params.postId]);
-    else
-        res.status(404);
+    if(posts.length >= req.params.postId) {
+        let post = posts[req.params.postId];
+        const content = await getContentFromFile(post.file);
+        post = {
+            'id' : post.id,
+            'title' :  post.title,
+            'author' : post.author,
+            'timestamp' : post.timestamp,
+            'views' : post.views,
+            'content' : content
+        }
+        res.status(200).send(post);
+    } else {
+        res.status(errorRes);
+    }
 });
+
 
 app.listen(PORT, () => {
     console.log('API listening...');

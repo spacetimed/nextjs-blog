@@ -22,6 +22,8 @@ Status | Type | Function
 ... | UI | Markdown 
 ... | UI | Sidebar
 ... | UI | Dark mode switcher
+... | Backend | Restrict all forms of user input
+... | Backend | Prevent file access for vulnerable locations 
 
 ---
 
@@ -53,6 +55,16 @@ Status | Type | Function
 * **Table** is stored in `/api/storage/{table}.json`
     * Index ("hashed") by ID, because that's how they will be requested
     * Table structure contains post information and stored file
+```
+{
+    'id' : id,
+    'title' : title,
+    'author' : author,
+    'timestamp' : timestamp,
+    'views' : views,
+    'content' : content
+}
+```
 
 ```
 [

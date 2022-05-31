@@ -3,7 +3,7 @@ import Layout from "../../components/layout";
 import styles from '../../styles/viewpost.module.css';
 
 export async function getStaticPaths() {
-    const paths = getAllPostParams();
+    const paths = await getAllPostParams();
     return {
         paths,
         fallback: false,
@@ -12,8 +12,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps( {params} ) {
     const postId = params.id;
-    const postObj = getPostData(postId);
-
+    const postObj = await getPostData(postId);
     return {
         props: {
             postObj,

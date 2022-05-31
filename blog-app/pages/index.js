@@ -5,7 +5,7 @@ import styles from '../styles/frontpage.module.css';
 import { getFrontFeed } from "../utils/fetchPosts";
 
 export async function getStaticProps() {
-    const feed = await getFrontFeed();
+    const feed = await getFrontFeed(0, 2);
     return {
         props: {
             feed
