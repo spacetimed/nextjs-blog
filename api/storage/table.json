@@ -1,0 +1,18 @@
+[
+    {
+        "id" : 0,
+        "title" : "My first post!",
+        "author" : "lamda",
+        "timestamp" : 1653835175276,
+        "views" : 0,
+        "file" : "my-first-post.md"
+    },
+    {
+        "id" : 1,
+        "title" : "My second post!",
+        "author" : "lamda",
+        "timestamp" : 1653835175276,
+        "views" : 0,
+        "file" : "my-second-post.md"
+    }
+]
