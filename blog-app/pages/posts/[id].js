@@ -2,6 +2,14 @@ import { getAllPostParams, getPostData } from "../../utils/fetchPosts";
 import Layout from "../../components/layout";
 import styles from '../../styles/viewpost.module.css';
 
+
+/*
+    [
+        { 'params' : { 'id' : ..., } },
+        { 'params' : { 'id' : ..., } },
+        { 'params' : { 'id' : ..., } },
+    ]
+*/
 export async function getStaticPaths() {
     const paths = await getAllPostParams();
     return {

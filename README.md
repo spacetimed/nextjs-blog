@@ -4,7 +4,7 @@ A simple blog system, written in React and NextJS.
 
 Technologies include **React, NextJS, Node, Express**.
 
-Created for demonstration purposes.
+Created for demonstration purposes as a proof of concept.
 
 ---
 
@@ -13,8 +13,8 @@ Status | Type | Function
 -------|----------|----------
 ✅ | Backend | Rewrite with NextJS 
 ✅ | UI | Rewrite CSS (use REM units, NextJS modules) 
-⌛ | Backend | Begin Express API for post CRUD 
-⌛ | Backend | Use hashtable to store/manage posts
+✅ | Backend | Begin Express API for post fetching 
+✅ | Backend | Use hashtable to store/manage posts
 ... | UI | Pagination
 ... | UI | Optimize mobile responsiveness 
 ... | UI | Post creation page, requires token to post
@@ -78,3 +78,9 @@ Function | Method | Endpoint
 ---------|--------|-----------
 Retrieve frontpage feed | `GET` | /feed `?start=` `?limit=`
 Retrieve post data | `GET` | /post/id `?id=`
+
+---
+
+## Issues
+
+* Hydration error when directly accessing blog posts (seems to randomly be fixed?)
