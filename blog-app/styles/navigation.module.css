@@ -1,8 +1,18 @@
 .navContainer {
     width:100%;
     border-bottom:1px solid var(--border);
-    padding-left:10rem;
-    box-sizing:border-box;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.navContent {
+    width:100%;
+    max-width:var(--appSize);
+    display:flex;
+    align-items:stretch;
+    justify-content:space-between;
+    flex-direction:row;
 }
 
 .navList {
@@ -12,9 +22,24 @@
 
 .navList li {
     float:left;
-    margin-right:10px;
+    margin-right:24px;
+    border-bottom:2px solid transparent;
+}
+
+.navList li:hover {
+    border-bottom:2px solid #000;
 }
 
 .navList a {
-    color:blue;
+    color:inherit;
+}
+
+.navSettings {
+    border-left:1px solid var(--border);
+    border-right:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding-left:12px;
+    padding-right:12px;
 }
