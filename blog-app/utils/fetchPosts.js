@@ -1,6 +1,5 @@
 const API = 'http://127.0.0.1:3030';
 
-
 // Fetch an array of all post objects between ID's 'start' and 'start+limit'
 export async function getPostsJson(start, limit) {
     const res = await fetch(`${API}/posts/${start}?limit=${limit}`)
@@ -12,7 +11,6 @@ export async function getPostsJson(start, limit) {
         return data;
     }
 }
-
 
 // Fetch a singular post object
 export async function getPostJson(id) {
