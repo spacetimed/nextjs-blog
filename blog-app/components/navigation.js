@@ -8,6 +8,8 @@ export default function Navigation() {
             <div className={styles.navContent}>
                 <ul className={styles.navList}>
                     <Link href="/"><a><li>Home</li></a></Link>
+                    <Link href="/"><a><li>About</li></a></Link>
+                    <Link href="/"><a><li>Contact</li></a></Link>
                 </ul>
                 <div className={styles.navSettings}>
                     <DarkMode />  

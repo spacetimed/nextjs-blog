@@ -4,6 +4,10 @@
     border-bottom:1px solid var(--border);
 }
 
+.frontpageContainer {
+    width:100%;
+}
+
 h1.title {
     font-weight:700;
     font-size:1.5rem;

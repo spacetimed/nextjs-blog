@@ -21,7 +21,7 @@ export default function Home({ feed }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Banner />
-            <div>
+            <div className={styles.frontpageContainer}>
                 {feed.map( ({id, title, author, content}) => (
                     <div className={styles.post}>
                         <Link href={`/posts/${id}`}><a><h1 className={styles.title}>{title}</h1></a></Link>
