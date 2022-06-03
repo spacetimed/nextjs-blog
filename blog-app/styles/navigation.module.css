@@ -1,6 +1,5 @@
 .navContainer {
     width:100%;
-    border-bottom:1px solid var(--border);
     display:flex;
     align-items:center;
     justify-content:center;
@@ -25,6 +24,7 @@
     float:left;
     margin-right:24px;
     border-bottom:2px solid transparent;
+    font-family:'Verona', sans-serif;
 }
 
 .navList li:hover {
@@ -43,4 +43,9 @@
     justify-content:center;
     padding-left:12px;
     padding-right:12px;
+    cursor:pointer;
+}
+
+.navSettings:hover {
+    color:var(--coolBlue);
 }

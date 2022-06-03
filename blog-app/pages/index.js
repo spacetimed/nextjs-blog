@@ -2,8 +2,11 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/layout';
 import Banner from '../components/banner';
+import Footer from '../components/footer';
+
 import styles from '../styles/frontpage.module.css'; 
 import { getFrontFeed } from "../utils/fetchPosts";
+
 // import AccessAlarm from '@mui/icons-material/AccessAlarm';
 
 export async function getStaticProps() {
@@ -30,6 +33,7 @@ export default function Home({ feed }) {
                     </div>
                 ))}
             </div>
+            <Footer />
         </Layout>
     );
 }

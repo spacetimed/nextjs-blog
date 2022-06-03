@@ -2,7 +2,7 @@
 
 A simple blog system, written in React and NextJS. 
 
-Technologies include **React, NextJS, Node, Express**.
+Technologies include **React, NextJS, Node, Express, CSS**,.
 
 Created for demonstration purposes as a proof of concept.
 

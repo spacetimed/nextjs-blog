@@ -4,6 +4,10 @@
     border-bottom:1px solid var(--border);
 }
 
+.post:last-of-type {
+    border-bottom:none;
+}
+
 .frontpageContainer {
     width:100%;
 }
