@@ -5,12 +5,13 @@
     --appSize: 900px;
     --fontSize: 100%;
     --coolBlue: rgb(147, 161, 202);
+    --font_Faded: rgb(135, 135, 135);
 }
 
 html {
     height:100%;
     width:100%;
-    font-size:var(--fontSize);
+    font-size:16px;
 }
 
 body {

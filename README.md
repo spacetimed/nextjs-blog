@@ -4,7 +4,7 @@ A simple blog system, written in React and NextJS.
 
 Technologies include **React, NextJS, Node, Express (RESTful API), CSS, HTML**,.
 
-Created for demonstration purposes as a proof of concept.
+Created for demonstration purposes entirely from scratch as a proof of concept.
 
 ---
 
@@ -53,22 +53,22 @@ Status | Type | Function
 ### Storage
 * Markdown posts are stored in `/api/storage/{post}.md` 
 * **Table** is stored in `/api/storage/{table}.json`
-    * Index ("hashed") by ID, because that's how they will be requested
-    * Table structure contains post information and stored file
+    * Index ("hashed") by ID 
+    * Structure:
 ```json
 [
     {
-        'id' : id,
-        'title' : title,
-        'author' : author,
-        'timestamp' : timestamp,
-        'views' : views,
-        'content' : content
+        "id" : 0,
+        "title" : "title",
+        "author" : "author",
+        "timestamp" : 0,
+        "views" : 0,
+        "content" : "content"
     }
 ]
 ```
 
-### **Endpoints**
+### **API Endpoints**
 Function | Method | Endpoint
 ---------|--------|-----------
 Retrieve frontpage feed | `GET` | /feed `?start=` `?limit=`

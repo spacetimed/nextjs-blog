@@ -6,13 +6,11 @@ export default function Footer() {
         <div className={styles.container}>
             <h1 className={styles.logo}>nextjs-blog</h1>
             <ul className={styles.nav}>
-                <li className={styles.nav}>About</li>
-                <li className={styles.nav}>Contact</li>
                 <li className={styles.nav}>Source</li>
                 <li className={styles.nav}>License</li>
                 <li className={styles.nav}>Privacy Policy</li>
             </ul>
-            <h3 className={styles.creds}>FFFFFF-base16<Code /></h3>
+            <h3 className={styles.creds}>FFFFFF-base16<Code sx={{fontSize: '1rem'}} /></h3>
         </div>
     )
 }

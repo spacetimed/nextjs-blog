@@ -49,7 +49,7 @@ h3.sub {
 }
 
 .gradient {
-    background: -webkit-linear-gradient(45deg, rgb(251, 199, 255), rgb(245, 195, 108));
+    background: -webkit-linear-gradient(270deg, rgb(251, 199, 255) 60%, rgb(199, 210, 255));
     background-clip:text;
     -webkit-background-clip: text;
     text-shadow:none;
