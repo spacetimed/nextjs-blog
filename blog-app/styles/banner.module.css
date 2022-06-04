@@ -1,52 +1,70 @@
-.bannerContainer {
+.container {
+    font-family:'Verdana', sans-serif !important;
+    
     cursor:default;
-    user-select:none;
-    width:100vw;
-    position:relative;
+
     border-top:2px solid var(--border);
     border-bottom:2px solid var(--border);
-    box-sizing:border-box;
+
     background:var(--coolBlue);
-    background:linear-gradient(45deg, var(--coolBlue) 15%, rgba(237,202,246));
+    background:linear-gradient(45deg, var(--coolBlue) 15%, rgb(209, 136, 227));
     text-shadow:0px 1px 1px rgba(0,0,0,0.2);
+
     display:flex;
     align-items:center;
     flex-direction:column;
     justify-content:center;
+
+    width:100%;
 }
 
-.bannerContent {
+.content {
+    width:100%;
+    max-width:var(--appSize);
+    
+    background-color:teal;
+    
     padding-top:3rem;
     padding-left:3rem;
     padding-bottom:7rem;
-    width:100%;
-    max-width:var(--appSize);
+    box-sizing:border-box;
+
+    display:flex;
+    flex-direction:column;
 }
 
-.largeText {
+h1.head {
+    display:inline-block;
     color:#fff;
-    width:var(--appSize);
     padding:0;
     margin:0;
     font-size:2rem;
     font-weight:700;
 }
 
-.subText {
+h3.sub {
+    display:inline-block;
     color:#fff;
-    width:var(--appSize);
     font-weight:300;
     font-size:1rem;
     padding:0;
     margin:0;
 }
 
-.gradientText {
-    font-family:'Verdana', sans-serif;
-    background: -webkit-linear-gradient(45deg, rgb(237, 202, 246), rgb(246, 219, 171));
+.gradient {
+    background: -webkit-linear-gradient(45deg, rgb(251, 199, 255), rgb(245, 195, 108));
     background-clip:text;
     -webkit-background-clip: text;
     text-shadow:none;
     -webkit-text-fill-color: transparent;
     filter:drop-shadow(0px 1px 1px rgba(0,0,0,0.2));
+}
+
+@media only screen and (max-width: 768px) {
+    .largeText {
+        font-size:1.7rem;
+    }
+    .subText {
+        font-size:0.8rem;
+    }
 }

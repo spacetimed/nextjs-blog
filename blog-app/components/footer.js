@@ -3,16 +3,16 @@ import Code from '@mui/icons-material/Code';
 
 export default function Footer() {
     return (
-        <div className={styles.footerContainer}>
-            <h1 className={styles.logoText}>nextjs-blog</h1>
-            <ul className={styles.list}>
-                <li className={styles.list}>About</li>
-                <li className={styles.list}>Contact</li>
-                <li className={styles.list}>Source</li>
-                <li className={styles.list}>License</li>
-                <li className={styles.list}>Privacy Policy</li>
+        <div className={styles.container}>
+            <h1 className={styles.logo}>nextjs-blog</h1>
+            <ul className={styles.nav}>
+                <li className={styles.nav}>About</li>
+                <li className={styles.nav}>Contact</li>
+                <li className={styles.nav}>Source</li>
+                <li className={styles.nav}>License</li>
+                <li className={styles.nav}>Privacy Policy</li>
             </ul>
-            <h3 className={styles.credText}>FFFFFF-base16<Code /></h3>
+            <h3 className={styles.creds}>FFFFFF-base16<Code /></h3>
         </div>
     )
 }

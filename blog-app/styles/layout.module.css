@@ -1,16 +1,19 @@
-.appContainer {
+.container {
     width:100%;
+    
     margin:0 auto;
+    position:relative;
+    
     display:flex;
     flex-direction:column;
     align-items:center;
-    padding:8px;
-    box-sizing:border-box;
-    padding-top:0px;
+    
+    background-color:rgb(206, 206, 255);
 }
 
-.contentContainer {
+.content {
     max-width:var(--appSize);
+    background-color:red;
     width:100%;
     display:flex;
     flex-direction:column;

@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/layout';
-import Banner from '../components/banner';
-import Footer from '../components/footer';
 
 import styles from '../styles/frontpage.module.css'; 
 import { getFrontFeed } from "../utils/fetchPosts";
@@ -23,7 +21,6 @@ export default function Home({ feed }) {
                 <title>Blog</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Banner />
             <div className={styles.frontpageContainer}>
                 {feed.map( ({id, title, author, content}) => (
                     <div className={styles.post}>
@@ -33,7 +30,6 @@ export default function Home({ feed }) {
                     </div>
                 ))}
             </div>
-            <Footer />
         </Layout>
     );
 }

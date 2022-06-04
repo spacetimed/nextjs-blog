@@ -2,7 +2,7 @@
 
 A simple blog system, written in React and NextJS. 
 
-Technologies include **React, NextJS, Node, Express, CSS**,.
+Technologies include **React, NextJS, Node, Express (RESTful API), CSS, HTML**,.
 
 Created for demonstration purposes as a proof of concept.
 
@@ -56,20 +56,15 @@ Status | Type | Function
     * Index ("hashed") by ID, because that's how they will be requested
     * Table structure contains post information and stored file
 ```json
-{
-    'id' : id,
-    'title' : title,
-    'author' : author,
-    'timestamp' : timestamp,
-    'views' : views,
-    'content' : content
-}
-```
-
-```json
 [
-    {id, title, ...},
-    {id, title, ...},
+    {
+        'id' : id,
+        'title' : title,
+        'author' : author,
+        'timestamp' : timestamp,
+        'views' : views,
+        'content' : content
+    }
 ]
 ```
 
@@ -78,3 +73,20 @@ Function | Method | Endpoint
 ---------|--------|-----------
 Retrieve frontpage feed | `GET` | /feed `?start=` `?limit=`
 Retrieve post data | `GET` | /post/id `?id=`
+
+
+```
+
+    index.js
+        |_ Layout (appContainer)
+            |_ Navigation
+            |_ Banner
+            |_ (contentContainer) 
+                |_ Frontpage
+            |_ Footer
+    
+    [id].js
+        |_ Layout
+            |_ Post
+
+```

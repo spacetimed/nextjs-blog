@@ -1,11 +1,12 @@
-.navContainer {
+.container {
     width:100%;
     display:flex;
     align-items:center;
     justify-content:center;
 }
 
-.navContent {
+.content {
+    background-color:blue;
     width:100%;
     max-width:var(--appSize);
     display:flex;
@@ -14,28 +15,28 @@
     flex-direction:row;
 }
 
-.navList {
+ul.nav {
     padding:0;
     list-style-type:none;
     overflow:hidden;
 }
 
-.navList li {
+li.nav {
     float:left;
     margin-right:24px;
     border-bottom:2px solid transparent;
     font-family:'Verona', sans-serif;
 }
 
-.navList li:hover {
+li.nav:hover {
     border-bottom:2px solid var(--coolBlue);
 }
 
-.navList a {
+ul.nav a {
     color:inherit;
 }
 
-.navSettings {
+.settings {
     border-left:1px solid var(--border);
     border-right:1px solid var(--border);
     display:flex;
@@ -46,6 +47,6 @@
     cursor:pointer;
 }
 
-.navSettings:hover {
+.settings:hover {
     color:var(--coolBlue);
 }

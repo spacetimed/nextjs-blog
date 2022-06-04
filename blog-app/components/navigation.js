@@ -4,14 +4,14 @@ import DarkMode from '@mui/icons-material/DarkMode';
 
 export default function Navigation() {
     return(
-        <div className={styles.navContainer}>
-            <div className={styles.navContent}>
-                <ul className={styles.navList}>
-                    <Link href="/"><a><li>Home</li></a></Link>
-                    <Link href="/"><a><li>About</li></a></Link>
-                    <Link href="/"><a><li>Contact</li></a></Link>
+        <div className={styles.container}>
+            <div className={styles.content}>
+                <ul className={styles.nav}>
+                    <Link href="/"><a><li className={styles.nav}>Home</li></a></Link>
+                    <Link href="/"><a><li className={styles.nav}>About</li></a></Link>
+                    <Link href="/"><a><li className={styles.nav}>Contact</li></a></Link>
                 </ul>
-                <div className={styles.navSettings}>
+                <div className={styles.settings}>
                     <DarkMode />  
                 </div>
             </div>

@@ -1,20 +1,20 @@
-.footerContainer {
+.container {
     width:100%;
     max-width:var(--appSize);
+    background-color:beige;
 
     display:grid;
     grid-template-columns:1fr 3fr 1fr;
 
 
-    align-items:center;
-    flex-direction:row;
-    padding:12px;
-    padding-top:0;
-    border-top:2px solid var(--border);
     margin-top:12px;
+    padding:12px;
+    box-sizing:border-box;
+    
+    border-top:2px solid var(--border);
 }
 
-h1.logoText, h3.credText {
+h1.logo, h3.creds {
     height:100%;
     margin:0;
     padding:0;
@@ -24,12 +24,12 @@ h1.logoText, h3.credText {
     align-items:center;
 }
 
-h3.credText {
+h3.creds {
     text-align:right;
     flex-direction:row-reverse;
 }
 
-ul.list {
+ul.nav {
     display:flex;
     align-items:center;
     height:100%;
@@ -37,7 +37,7 @@ ul.list {
     padding:0;
 }
 
-li.list {
+li.nav {
     float:left;
     padding:0;
     margin:0;
