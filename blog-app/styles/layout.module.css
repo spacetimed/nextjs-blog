@@ -7,13 +7,10 @@
     display:flex;
     flex-direction:column;
     align-items:center;
-    
-    background-color:rgb(206, 206, 255);
 }
 
 .content {
     max-width:var(--appSize);
-    background-color:red;
     width:100%;
     display:flex;
     flex-direction:column;

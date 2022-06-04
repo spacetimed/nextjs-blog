@@ -1,7 +1,6 @@
 .container {
     width:100%;
     max-width:var(--appSize);
-    background-color:beige;
 
     display:grid;
     grid-template-columns:1fr 3fr 1fr;
