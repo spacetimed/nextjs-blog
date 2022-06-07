@@ -20,3 +20,16 @@ h3.author {
     font-weight:400;
     margin-top:0.2rem;
 }
+
+.content h1 {
+    font-size:1.3rem;
+    border-bottom:1px solid var(--border);
+    font-weight:600;
+    display:inline-block;
+}
+
+.content code {
+    background-color:rgba(0,0,0,0.1);
+    border-radius:2px;
+    padding:2px;
+}
