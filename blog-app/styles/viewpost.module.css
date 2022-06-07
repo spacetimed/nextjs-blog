@@ -1,6 +1,6 @@
 .container {
-    margin-top:1em;
-    padding:2rem;
+    margin-top:12px;
+    padding:24px;
     width:100%;
     box-sizing:border-box;
 }
@@ -32,4 +32,13 @@ h3.author {
     background-color:rgba(0,0,0,0.1);
     border-radius:2px;
     padding:2px;
+}
+
+a.back {
+    color:rgb(93, 112, 185);
+    font-weight:400;
+    font-size:0.8rem;
+    font-family:'Verdana', sans-serif !important;
+    margin-top:48px;
+    display:block;
 }

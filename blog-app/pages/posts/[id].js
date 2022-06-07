@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { getAllPostParams, getPostData } from "../../utils/fetchPosts";
 import Layout from "../../components/layout";
 import styles from '../../styles/viewpost.module.css';
@@ -30,6 +31,7 @@ export default function Post( {postObj, postContent} ) {
                 <h1 className={styles.title}>{postObj.title}</h1>
                 <h3 className={styles.author}>by <u>{postObj.author}</u></h3>
                 <div className={styles.content} dangerouslySetInnerHTML={{ __html: postContent }}></div>
+                <Link href="/"><a className={styles.back}>&larr; Back</a></Link>
             </div>
         </Layout>
     );
