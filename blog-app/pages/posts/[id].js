@@ -21,9 +21,10 @@ export async function getStaticProps( {params} ) {
 }
 
 export default function Post( {postObj} ) {
+    console.table(postObj);
     return(
         <Layout>
-            <div className={styles.post}>
+            <div className={styles.container}>
                 <h1 className={styles.title}>{postObj.title}</h1>
                 <h3 className={styles.author}>by <u>{postObj.author}</u></h3>
                 <p>{postObj.content}</p>

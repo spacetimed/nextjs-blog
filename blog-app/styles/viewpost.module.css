@@ -1,7 +1,8 @@
-.post {
+.container {
     margin-top:1em;
     padding:2rem;
-    border-bottom:1px solid var(--border);
+    width:100%;
+    box-sizing:border-box;
 }
 
 h1.title {

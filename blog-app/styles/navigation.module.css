@@ -20,9 +20,9 @@
 ul.nav {
     height:100%;
     
-    font-size:0.875rem; /* 16px -> 14px */
-    font-weight:400;
+    font-weight:300;
     font-family:'Verona', sans-serif;
+    font-size:0.8rem;
     color:var(--font_Faded);
     
     padding:0;
@@ -73,4 +73,14 @@ ul.nav a {
 
 .settings:hover {
     color:var(--coolBlue);
+}
+
+.settings:active {
+    transform:scale(0.9);
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        border-top:1px solid var(--border);
+    }
 }

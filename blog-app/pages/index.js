@@ -14,6 +14,13 @@ export async function getStaticProps() {
     };
 }
 
+const getLocalDate = (timestamp) => {
+    const date = new Date(timestamp);
+    const months = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+    return(months[date.getMonth()] + " " + date.getDate());
+};
+
 export default function Home({ feed }) {
     return (
         <Layout>
@@ -21,11 +28,11 @@ export default function Home({ feed }) {
                 <title>Blog</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className={styles.frontpageContainer}>
-                {feed.map( ({id, title, author, content}) => (
+            <div className={styles.container}>
+                {feed.map( ({id, title, author, timestamp, views, content}) => (
                     <div className={styles.post}>
                         <Link href={`/posts/${id}`}><a><h1 className={styles.title}>{title}</h1></a></Link>
-                        <h3 className={styles.author}>by <u>{author}</u></h3>
+                        <h3 className={styles.author}>by <u>{author}</u> &#8226; {getLocalDate(timestamp)}</h3>
                         <p>{content}</p>
                     </div>
                 ))}
