@@ -1,3 +1,4 @@
+import markdownToHtml from '../utils/markdownToHtml';
 const API = 'http://127.0.0.1:3030';
 
 // Fetch an array of all post objects between ID's 'start' and 'start+limit'
@@ -18,9 +19,27 @@ export async function getPostJson(id) {
     .catch( function(error) {
         return({});
     });
-    console.log(`${API}/post/${id}`);
     const data = await res.json();
     return data;
+}
+
+async function cleanContent(content) {
+    const maxLength = 100;
+    let clean = await markdownToHtml(content);
+    clean = clean.replace(/<[^>]*>?/gm, '');
+    return clean.substring(0, maxLength) + '...';
+}
+
+async function formatPost(post) {
+    const entry = {
+        'id' : post.id,
+        'title' : post.title,
+        'author' : post.author,
+        'timestamp' : post.timestamp,
+        'views' : post.views,
+        'content' : await cleanContent(post.content), 
+    };
+    return entry;
 }
 
 // Used by 'getStaticProps' in 'index.js'
@@ -30,17 +49,14 @@ export async function getFrontFeed(start, limit) {
     if(feed == undefined || feed.length <= 0)
         return([]);
 
-    const maxContentSize = 120;
-    return feed.map( ({id, title, author, timestamp, views, content}) => {
-        return {
-            id: id,
-            title: title,
-            author: author,
-            timestamp: timestamp,
-            views: views,
-            content: content.substring(0, maxContentSize) + "...",
-        }
+    const stack = [];
+    const mapFn = feed.map( async(post) => {
+        const entry = await formatPost(post);
+        stack.push(entry);
     });
+    
+    await Promise.all(mapFn);
+    return(stack);
 }
 
 // Used by 'getStaticPaths' in '[id].js'

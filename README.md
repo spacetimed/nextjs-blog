@@ -1,27 +1,40 @@
-# nextjs-blog 
+<p align="center">
+    <span style="font-size:32px;font-weight:700;color:rgb(147, 161, 202);">
+<span style='color:#93a1ca;'>n</span><span style='color:#9395ca;'>e</span><span style='color:#9993ca;'>x</span><span style='color:#a493ca;'>t</span><span style='color:#a793ca;'>j</span><span style='color:#ac93ca;'>s</span><span style='color:#b193ca;'>-</span><span style='color:#b793ca;'>b</span><span style='color:#bb93ca;'>l</span><span style='color:#c093ca;'>o</span><span style='color:#c393ca;'>g</span>
+    </span><br>
+</p>
 
-A simple blog system, written with the *React* library and *NextJS* framework. 
+--- 
 
-Technologies include *React, NextJS, Node, Express (RESTful API), CSS, HTML*.
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+![Language: JavaScript](https://img.shields.io/badge/language-JavaScript-green.svg)
 
-Created for educational purposes as a proof of concept.
+A blog system written with the **React** library and **NextJS** framework.
+
+Created for educational purposes. Concepts used include:
+* React
+* NextJS
+* Node
+* Express (RESTful API)
+* CSS/HTML
 
 ---
 
-## To do 
+## To-do list 
+
+
 Status | Category | Function
 -------|----------|----------
 ⏳ | UI | Pagination
-⏳ | Backend/Security | Restrict all forms of user input -> check for 'isInt' from params in api
-⏳ | Backend/Security | Prevent file access for vulnerable locations 
-⏳ | UI | View counter
+⏳ | Backend/Security | Sanitize all user input 
+⏳ | UI | Implement view counter function
 ⏳ | UI | Implement dark mode switcher
 
 ---
 
 ## NextJS
 * Uses **Static Site Generation** (SSG)
-* Uses *remark* to transform HTML to Markdown.
+* Uses *remark* to transform HTML to Markdown
 * Basic implementation of *mui* icons. 
 
 ---
@@ -46,7 +59,7 @@ Status | Category | Function
 ]
 ```
 
-*Endpoints:*
+*API Endpoints:*
 Function | Method | Endpoint
 ---------|--------|-----------
 Retrieve frontpage feed | `GET` | /feed `?start=` `?limit=`

@@ -3,12 +3,10 @@ import Link from 'next/link'
 import Layout from '../components/layout';
 
 import styles from '../styles/frontpage.module.css'; 
-import { getFrontFeed } from "../utils/fetchPosts";
-
-// import AccessAlarm from '@mui/icons-material/AccessAlarm';
+import { getFrontFeed } from '../utils/fetchPosts';
 
 export async function getStaticProps() {
-    const feed = await getFrontFeed(0, 2);
+    const feed = await getFrontFeed(0, 99);
     return {
         props: { feed },
     };
@@ -28,7 +26,7 @@ export default function Home({ feed }) {
                 <title>Blog</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className={styles.container}>
+            <div className={styles.frontpageContainer}>
                 {feed.map( ({id, title, author, timestamp, views, content}) => (
                     <div className={styles.post}>
                         <Link href={`/posts/${id}`}><a><h1 className={styles.title}>{title}</h1></a></Link>
