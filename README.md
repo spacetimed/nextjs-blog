@@ -1,8 +1,7 @@
 <p align="center">
-    <span style="font-size:32px;font-weight:700;color:rgb(147, 161, 202);">
-<span style='color:#93a1ca;'>n</span><span style='color:#9395ca;'>e</span><span style='color:#9993ca;'>x</span><span style='color:#a493ca;'>t</span><span style='color:#a793ca;'>j</span><span style='color:#ac93ca;'>s</span><span style='color:#b193ca;'>-</span><span style='color:#b793ca;'>b</span><span style='color:#bb93ca;'>l</span><span style='color:#c093ca;'>o</span><span style='color:#c393ca;'>g</span>
-    </span><br>
+    <img width="256" src="assets/logo.png" />
 </p>
+
 
 --- 
 
@@ -25,7 +24,7 @@ Created for educational purposes. Concepts used include:
 
 Status | Category | Function
 -------|----------|----------
-⏳ | UI | Pagination
+⏳ | UI | Pagination on homepage
 ⏳ | Backend/Security | Sanitize all user input 
 ⏳ | UI | Implement view counter function
 ⏳ | UI | Implement dark mode switcher
